@@ -1,0 +1,61 @@
+// 1. stripes-item
+@mixin stripes-item-layout($animations, $cols, $col-width) {
+	width: $col-width * 1%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	position: absolute;
+
+	@for $i from 1 through $cols {
+		&:nth-of-type(#{$i}) {
+			// left, bg
+			left: $col-width * ($i - 1vw);
+			background-color: map-get($itacademy-palette, $i);
+			// animations
+			@-webkit-keyframes stripes-item-anime-#{$i} {
+				0% {
+					transform: translate(map-get($animations, $i));
+				}
+				100% {
+					transform: translate(0, 0);
+				}
+			}
+			@keyframes stripes-item-anime-#{$i} {
+				0% {
+					transform: translate(map-get($animations, $i));
+				}
+				100% {
+					transform: translate(0, 0);
+				}
+			}
+			-webkit-animation: stripes-item-anime-#{$i} 0.5s ease-out #{$i * 0.1}s;
+			animation: stripes-item-anime-#{$i} 0.5s ease-out #{$i * 0.1}s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+// 2. stripes-item .stripes-content
+@mixin stripes-content-data($data-map) {
+	@each $i, $letter in $data-map {
+		&:nth-of-type(#{$i}) .stripes-content::before {
+			@if ($letter==$heart) {
+				content: to-upper-case("#{$letter} ♥");
+			} @else {
+				content: to-upper-case("#{$letter}");
+			}
+		}
+	}
+}
+
+// 3 .stripes-content
+@mixin stripes-font-style($family, $size, $color) {
+	font-family: $family, sans-serif;
+	font-size: $size;
+	color: $color;
+	font-weight: light;
+}

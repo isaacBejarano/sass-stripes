@@ -1,0 +1,45 @@
+// GLOBAL VARIABLES
+$itacademy-palette: (
+	1: #244f75,
+	2: #60bfbf,
+	3: #8c4b7e,
+	4: #f8bb44,
+	5: #f24b4b,
+);
+
+$itacademy-text: (
+	1: "it",
+	2: "a",
+	3: "ca",
+	4: "de",
+	5: "my",
+);
+
+$heart: "my"; // ♥
+
+$font-style: "Lato", 3.5vw, white;
+
+$columns-and-widths: 5, 20;
+
+$animations: (
+	1: (
+		-100%,
+		0,
+	),
+	2: (
+		0,
+		100%,
+	),
+	3: (
+		0,
+		-100%,
+	),
+	4: (
+		0,
+		100%,
+	),
+	5: (
+		100%,
+		0,
+	),
+);

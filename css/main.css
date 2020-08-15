@@ -1,0 +1,137 @@
+@charset "UTF-8";
+body {
+  box-sizing: border-box;
+  margin: 0; }
+
+/* BEM-like */
+.stripes-item {
+  width: 20%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: absolute; }
+  .stripes-item:nth-of-type(1) {
+    left: 0vw;
+    background-color: #244f75;
+    -webkit-animation: stripes-item-anime-1 0.5s ease-out 0.1s;
+    animation: stripes-item-anime-1 0.5s ease-out 0.1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes stripes-item-anime-1 {
+  0% {
+    transform: translate(-100%, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes stripes-item-anime-1 {
+  0% {
+    transform: translate(-100%, 0); }
+  100% {
+    transform: translate(0, 0); } }
+  .stripes-item:nth-of-type(2) {
+    left: 20vw;
+    background-color: #60bfbf;
+    -webkit-animation: stripes-item-anime-2 0.5s ease-out 0.2s;
+    animation: stripes-item-anime-2 0.5s ease-out 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes stripes-item-anime-2 {
+  0% {
+    transform: translate(0, 100%); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes stripes-item-anime-2 {
+  0% {
+    transform: translate(0, 100%); }
+  100% {
+    transform: translate(0, 0); } }
+  .stripes-item:nth-of-type(3) {
+    left: 40vw;
+    background-color: #8c4b7e;
+    -webkit-animation: stripes-item-anime-3 0.5s ease-out 0.3s;
+    animation: stripes-item-anime-3 0.5s ease-out 0.3s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes stripes-item-anime-3 {
+  0% {
+    transform: translate(0, -100%); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes stripes-item-anime-3 {
+  0% {
+    transform: translate(0, -100%); }
+  100% {
+    transform: translate(0, 0); } }
+  .stripes-item:nth-of-type(4) {
+    left: 60vw;
+    background-color: #f8bb44;
+    -webkit-animation: stripes-item-anime-4 0.5s ease-out 0.4s;
+    animation: stripes-item-anime-4 0.5s ease-out 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes stripes-item-anime-4 {
+  0% {
+    transform: translate(0, 100%); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes stripes-item-anime-4 {
+  0% {
+    transform: translate(0, 100%); }
+  100% {
+    transform: translate(0, 0); } }
+  .stripes-item:nth-of-type(5) {
+    left: 80vw;
+    background-color: #f24b4b;
+    -webkit-animation: stripes-item-anime-5 0.5s ease-out 0.5s;
+    animation: stripes-item-anime-5 0.5s ease-out 0.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both; }
+
+@-webkit-keyframes stripes-item-anime-5 {
+  0% {
+    transform: translate(100%, 0); }
+  100% {
+    transform: translate(0, 0); } }
+
+@keyframes stripes-item-anime-5 {
+  0% {
+    transform: translate(100%, 0); }
+  100% {
+    transform: translate(0, 0); } }
+  .stripes-item::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+    mix-blend-mode: soft-light;
+    transform: skew(30deg);
+    transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1); }
+  .stripes-item:hover::before {
+    transform: skew(0); }
+  .stripes-item:nth-of-type(1) .stripes-content::before {
+    content: "IT"; }
+  .stripes-item:nth-of-type(2) .stripes-content::before {
+    content: "A"; }
+  .stripes-item:nth-of-type(3) .stripes-content::before {
+    content: "CA"; }
+  .stripes-item:nth-of-type(4) .stripes-content::before {
+    content: "DE"; }
+  .stripes-item:nth-of-type(5) .stripes-content::before {
+    content: "MY ♥"; }
+
+.stripes-content {
+  font-family: "Lato", sans-serif;
+  font-size: 3.5vw;
+  color: white;
+  font-weight: light; }
