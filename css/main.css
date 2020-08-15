@@ -1,18 +1,23 @@
 @charset "UTF-8";
-body {
-  box-sizing: border-box;
-  margin: 0; }
+* {
+  box-sizing: border-box; }
+
+main {
+  min-height: 100vh; }
 
 /* BEM-like */
 .stripes-item {
   width: 20%;
-  height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  position: absolute; }
+  position: absolute;
+  top: 0;
+  will-change: width, left;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
   .stripes-item:nth-of-type(1) {
     left: 0vw;
     background-color: #244f75;
@@ -115,8 +120,7 @@ body {
     height: 100%;
     background-color: rgba(255, 255, 255, 0.2);
     mix-blend-mode: soft-light;
-    transform: skew(30deg);
-    transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1); }
+    transform: skew(30deg); }
   .stripes-item:hover::before {
     transform: skew(0); }
   .stripes-item:nth-of-type(1) .stripes-content::before {

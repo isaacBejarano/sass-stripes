@@ -4,9 +4,11 @@
 @import "partials/_stripes-mixins"; // layout, styles
 
 // STYLE
-body {
+* {
 	box-sizing: border-box;
-	margin: 0;
+}
+main {
+	min-height: 100vh;
 }
 
 /* BEM-like */
@@ -25,7 +27,6 @@ body {
 			background-color: rgba(white, 0.2);
 			mix-blend-mode: soft-light;
 			transform: skew(30deg);
-			transition: transform 0.3s cubic-bezier(0.2, 1, 0.3, 1);
 		}
 		&:hover::before {
 			transform: skew(0);
